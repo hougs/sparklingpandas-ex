@@ -9,3 +9,4 @@ psc = PSparkContext(sc)
 
 # read csv file with sparkling pandas context.
 spDF = psc.read_csv("ex-data/SFPD_Incidents.csv")
+spDF.groupby("Category").count()
