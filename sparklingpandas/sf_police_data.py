@@ -9,5 +9,5 @@ psc = PSparkContext(sc)
 
 # read csv file with sparkling pandas context.
 spDF = psc.read_csv("ex-data/SFPD_Incidents.csv")
-spDF.groupby("Category").count()
+spDF.groupby("Category").count().collect().to_csv(path_or_buf="/home/juliet/src/sparklingpandas-ex/my_csv.csv")
 
